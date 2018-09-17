@@ -100,6 +100,8 @@ class Swift_MemorySpool implements Swift_Spool
                     // wait half a second before we try again
                     usleep(500000);
                 } else {
+                    array_unshift($this->messages, $message);
+                    
                     throw $exception;
                 }
             }
